@@ -15,18 +15,27 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   validate:
-    # The type of runner that the job will run on
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Get OpenAPI files
+      id: getfiles
+      uses: actions/checkout@v2
+      run:  |
+        # Using github env (newline separated file list)
+        echo 'FILE_LIST<<EOF' >> $GITHUB_ENV
+        find lib -type f -iname "*openapi.yaml" >> $GITHUB_ENV
+        echo 'EOF' >> $GITHUB_ENV
 
-      # Runs a single command using the runners shell
-      - name: Validate YAML
-        uses: mbowman100/swagger-validator-action@master
-        with:
-          files: |
-            openapi.yaml
+        # Using step output (space separated file list)
+        FILES="$(find lib -type f -iname "*openapi.yaml")"
+        echo "::set-output name=file_list::$FILES"
+    - name: swagger-validator
+      uses: mbowman100/swagger-validator-action@master
+      if: env.FILE_COUNT != '0' # Comment out if you want it to fail if no files found
+      with:
+        files: ${{ env.FILE_LIST }}
+        # files: ${{ steps.getfiles.outputs.file_list }} # For if you're using output
 
