@@ -22,7 +22,7 @@ jobs:
     steps:
     - name: Get OpenAPI files
       id: getfiles
-      uses: actions/checkout@v2
+      #uses: actions/checkout@v2
       run:  |
         # Using github env (newline separated file list)
         echo 'FILE_LIST<<EOF' >> $GITHUB_ENV
