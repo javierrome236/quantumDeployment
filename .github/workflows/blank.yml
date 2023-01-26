@@ -20,9 +20,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Get OpenAPI files
+    - name: Get OpenAPI files Action
       id: getfiles
-      #uses: actions/checkout@v2
+      uses: actions/checkout@v2
+    - name: Get files
       run:  |
         # Using github env (newline separated file list)
         echo 'FILE_LIST<<EOF' >> $GITHUB_ENV
