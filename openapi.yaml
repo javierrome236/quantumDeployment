@@ -1,0 +1,117 @@
+openapi: 3.0.2
+info:
+  title: Quantum Services
+  description: This API enables the generation of quantum services.
+  version: '1.0'
+  termsOfService: 'https://quantum.spilab.es/terms'
+  contact:
+    name: Spilab
+    url: 'https://spilab.es'
+    email: info@spilab.es
+tags:
+  - name: quantum
+    description: Everything about your Quantum Service
+  - name: quantum_code
+    description: Everything about your quantum service code and circuits
+paths:
+  /circuit/randomAWS:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of Grover Algorithm
+      description: ''
+      operationId: grover_circuitAWS
+      parameters:
+        - name: machine
+          in: query
+          description: Name of the machine where to execute
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22,%22H%22,%22H%22,%22H%22,%22H%22],[%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22]]}'
+      x-provider: 'aws'
+  /circuit/randomIBM:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of Grover Algorithm
+      description: ''
+      operationId: grover_circuitIBM
+      parameters:
+        - name: machine
+          in: query
+          description: Name of the machine where to execute
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22,%22H%22,%22H%22,%22H%22,%22H%22],[%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22]]}'
+      x-provider: 'ibm'
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+components:
+  schemas:
+    Category:
+      title: quantum category
+      description: A category for a quantum code
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          pattern: ^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$
+      xml:
+        name: Category
+    quantum:
+      title: quantum code
+      description: quantum code 
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        category:
+          $ref: '#/components/schemas/Category'
+        name:
+          type: string
+          example: gate-based
+      xml:
+        name: quantum
