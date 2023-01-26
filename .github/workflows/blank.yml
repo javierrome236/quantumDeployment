@@ -27,7 +27,7 @@ jobs:
       run:  |
         # Using github env (newline separated file list)
         echo 'FILE_LIST<<EOF' >> $GITHUB_ENV
-        find lib -type f -iname "*openapi.yaml" >> $GITHUB_ENV
+        find -type f -iname "*openapi.yaml" >> $GITHUB_ENV
         echo 'EOF' >> $GITHUB_ENV
 
         # Using step output (space separated file list)
