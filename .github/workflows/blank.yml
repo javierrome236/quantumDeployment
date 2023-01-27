@@ -18,12 +18,29 @@ jobs:
   validate:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        jdk: [14]
+        python: [3.9]
 
     steps:
-    - name: Get OpenAPI files Action
-      id: getfiles
-      uses: mbowman100/swagger-validator-action@master
-      with:
-        files: |
-          ./openapi.yaml
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build with Maven
+        run: java -jar openapi-generator-cli.jar generate -i openapi.yaml -g python-quantum -o .
+    
+    
+    
+    
+    
+    #- name: Get OpenAPI files Action
+     # id: getfiles
+      #uses: mbowman100/swagger-validator-action@master
+      #with:
+       # files: |
+       #   ./openapi.yaml
 
