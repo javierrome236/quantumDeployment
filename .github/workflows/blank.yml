@@ -43,12 +43,13 @@ jobs:
       - name: Build with Maven
         run: java -jar openapi-generator-cli.jar generate -i openapi.yaml -g python-quantum -o .
       - name: Deploy Stage
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: 'http://54.155.193.167:8081/docker'
-          method: 'POST'
-          customHeaders: '{"Content-Type": "multipart/form-data"}'
-          data: '{"name": "python", "yaml": "https://raw.githubusercontent.com/javierrome236/quantumDeployment/main/openapi.yaml?token=GHSAT0AAAAAAB4DYJACLERVQHFUZB62LRS4Y6TUHZA"}'
+        run: curl -X POST -F 'name=python' -F 'yaml=https://raw.githubusercontent.com/javierrome236/quantumDeployment/main/openapi.yaml?token=GHSAT0AAAAAAB4DYJACLERVQHFUZB62LRS4Y6TUHZA' http://54.155.193.167:8081/docker
+#         uses: fjogeleit/http-request-action@v1
+#         with:
+#           url: 'http://54.155.193.167:8081/docker'
+#           method: 'POST'
+#           customHeaders: '{"Content-Type": "multipart/form-data"}'
+#           data: '{"name": "python", "yaml": "https://raw.githubusercontent.com/javierrome236/quantumDeployment/main/openapi.yaml?token=GHSAT0AAAAAAB4DYJACLERVQHFUZB62LRS4Y6TUHZA"}'
 
           
         
