@@ -42,6 +42,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install jinja2==3.0.3 --force-reinstall
           pip install itsdangerous==2.0.1 --force-reinstall
+          pip install werkzeug==2.0.3 --force-reinstall
+          
         
       - name: Run python project
         run: |
