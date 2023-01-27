@@ -44,6 +44,7 @@ jobs:
       - name: Run python project
         run: |
           cd ./openapi_server
+          ls
           python -m openapi_server
           
     
