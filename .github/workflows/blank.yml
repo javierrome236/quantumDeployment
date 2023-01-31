@@ -39,14 +39,14 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install jinja2==3.0.3 --force-reinstall
           pip install itsdangerous==2.0.1 --force-reinstall
-          pip install werkzeug==2.0.3 --force-reinstall
+          pip install werkzeug==2.0.3 --force-reinstall        
+      - name: Build with Maven
+        run: java -jar openapi-generator-cli.jar generate -i openapi.yaml -g python-quantum -o .
       - name: Check python project
         run: |
          cd ./openapi_server
          python -m compileall .
          #python -m openapi_server          
-      - name: Build with Maven
-        run: java -jar openapi-generator-cli.jar generate -i openapi.yaml -g python-quantum -o .
       - name: Deploy Stage
         run: curl -X POST -F 'name=python' -F 'yaml=https://raw.githubusercontent.com/javierrome236/quantumDeployment/main/openapi.yaml?token=GHSAT0AAAAAAB4DYJACLERVQHFUZB62LRS4Y6TUHZA' http://54.155.193.167:8081/docker
 
