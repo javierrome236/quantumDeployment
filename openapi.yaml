@@ -47,13 +47,13 @@ paths:
           description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22,%22H%22,%22H%22,%22H%22,%22H%22],[%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22]]}'
       x-provider: 'aws'
-  /circuit/randomIBM:
+  /circuit/ShorAWS:
     get:
       tags:
         - quantum_code
-      summary: Get the circuit implementation of Grover Algorithm
+      summary: Get the circuit implementation of Shor Algorithm
       description: ''
-      operationId: grover_circuitIBM
+      operationId: shor_circuitAWS
       parameters:
         - name: machine
           in: query
@@ -78,8 +78,79 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
+      x-quantumCode: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/openapi-generator-quantum/main/shor.py'
+      x-provider: 'aws'
+  /circuit/randomIBM:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of Grover Algorithm
+      description: ''
+      operationId: grover_circuitIBM
+      parameters:
+        - name: machine
+          in: query
+          description: Name of the machine where to execute
+          required: false
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22,%22H%22,%22H%22,%22H%22,%22H%22],[%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22]]}'
       x-provider: 'ibm'
+  /findByCategory:
+    get:
+      tags:
+        - quantum
+      summary: Finds quantum service by category
+      description: Multiple status values can be provided with comma separated strings
+      operationId: findServiceByCategory
+      parameters:
+        - name: qua
+          in: query
+          description: Status values that need to be considered for filter
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - annealing
+                - gate-based
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/quantum'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/quantum'
+        '400':
+          description: Invalid status value
 externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
