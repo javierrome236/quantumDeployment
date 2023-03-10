@@ -31,16 +31,16 @@ jobs:
            NAME: ${{ secrets.NAME }}
         run: |
          git init
-         git config user.email "$EMAIL"
-         git config user.name "$NAME"
+         git config --global user.email "$EMAIL"
+         git config --global user.name "$NAME"
          git config --list   
-         git clone https://github.com/javierrome236/sonarQuantum.git
-         python sonar.py
-         cd ./sonarQuantum
-         echo "$EMAIL"
-         git add *
-         git commit -m "Commit"
-         git push origin master
+         #git clone https://github.com/javierrome236/sonarQuantum.git
+         #python sonar.py
+         #cd ./sonarQuantum
+         #echo "$EMAIL"
+         #git add *
+         #git commit -m "Commit"
+         #git push origin master
       - name: Check python project
         run: |
          cd ./openapi_server
