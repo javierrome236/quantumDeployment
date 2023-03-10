@@ -50,6 +50,7 @@ jobs:
          git clone https://github.com/javierrome236/sonarQuantum.git
          python sonar.py
          cd ./sonarQuantum
+         echo "$EMAIL"
          git config --global user.email "$EMAIL"
          git config --global user.name "$NAME"
          git add *
