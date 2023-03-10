@@ -30,7 +30,7 @@ jobs:
            EMAIL: ${{ secrets.EMAIL }}
            NAME: ${{ secrets.NAME }}
         run: |
-         git config --list   
+         git init
          git config user.email "$EMAIL"
          git config user.name "$NAME"
          git config --list   
