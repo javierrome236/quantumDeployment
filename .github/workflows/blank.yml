@@ -46,6 +46,10 @@ jobs:
         run: |
          git clone https://github.com/javierrome236/sonarQuantum.git
          python sonar.py
+         cd ./sonarQuantum
+         git add *
+         git commit -m "Commit"
+         git push origin master
       - name: Check python project
         run: |
          cd ./openapi_server
