@@ -27,8 +27,8 @@ jobs:
 
       - name: Prepare Sonar files
         env:
-           EMAIL: ${{ secrets.email }}
-           NAME: ${{ secrets.name }}
+           EMAIL: ${{ secrets.EMAIL }}
+           NAME: ${{ secrets.NAME }}
         run: |
          git config --list   
          git config user.email "$EMAIL"
