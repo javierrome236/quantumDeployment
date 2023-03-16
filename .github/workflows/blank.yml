@@ -51,13 +51,24 @@ jobs:
          git config --global user.email "$EMAIL"
          git config --global user.name "$NAME"
          git config --list   
-         #git clone https://github.com/javierrome236/sonarQuantum.git
-         #python sonar.py
-         #cd ./sonarQuantum
+         git clone https://github.com/javierrome236/sonarQuantum.git
+         python sonar.py
+         cd ./sonarQuantum
          #echo "$EMAIL"
          #git add *
          #git commit -m "Commit"
          #git push origin master
+         
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'sonarQuantum'
+          destination-github-username: 'javierrome236'
+          destination-repository-name: 'sonarQuantum'
+          user-email: javierromero236@gmail.com
+          target-branch: main
       - name: Check python project
         run: |
          cd ./openapi_server
