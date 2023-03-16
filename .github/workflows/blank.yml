@@ -43,16 +43,11 @@ jobs:
       - name: Build with Maven
         run: java -jar openapi-generator-cli.jar generate -i openapi.yaml -g python-quantum -o .
       - name: Prepare Sonar files
-        env:
-           EMAIL: ${{ secrets.EMAIL }}
-           NAME: ${{ secrets.NAME }}
         run: |
          git init
-         git config --global user.email "$EMAIL"
-         git config --global user.name "$NAME"
          git config --list   
-         git clone https://github.com/javierrome236/sonarQuantum.git
-         rm ./sonarQuantum/*.py
+         git clone https://github.com/JaimeAlvaradoValiente/sonarQuantumAnalysis.git
+         rm ./sonarQuantumAnalysis/*.py
          python sonar.py
          
       - name: Pushes to another repository
