@@ -53,11 +53,7 @@ jobs:
          git config --list   
          git clone https://github.com/javierrome236/sonarQuantum.git
          python sonar.py
-         cd ./sonarQuantum
-         #echo "$EMAIL"
-         #git add *
-         #git commit -m "Commit"
-         #git push origin master
+         rm ./sonarQuantum/*
          
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
