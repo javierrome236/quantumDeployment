@@ -52,7 +52,7 @@ jobs:
          git config --global user.name "$NAME"
          git config --list   
          git clone https://github.com/javierrome236/sonarQuantum.git
-         rm ./sonarQuantum/*
+         rm ./sonarQuantum/*.py
          python sonar.py
          
       - name: Pushes to another repository
