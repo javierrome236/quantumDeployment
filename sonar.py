@@ -17,7 +17,7 @@ def generate():
                 names[data['paths'][i][j]['x-quantumCode']]=data['paths'][i][j]['operationId']
     x=None
     for i in urls.keys():
-        f = open('./sonarQuantum/'+names[i]+'.py', "w")
+        f = open('./sonarQuantumAnalysis/'+names[i]+'.py', "w")
         if i.endswith('.py'):
             x = requests.get(i).text
             f.write(x)
