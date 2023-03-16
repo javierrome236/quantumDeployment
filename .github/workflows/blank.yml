@@ -55,7 +55,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'sonarQuantum'
+          source-directory: 'sonarQuantumAnalysis'
           destination-github-username: ${{ secrets.USERNAME }}
           destination-repository-name: 'sonarQuantumAnalysis'
           user-email: ${{ secrets.EMAIL }}
