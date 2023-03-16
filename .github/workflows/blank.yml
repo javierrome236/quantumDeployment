@@ -57,7 +57,7 @@ jobs:
         with:
           source-directory: 'sonarQuantum'
           destination-github-username: 'javierrome236'
-          destination-repository-name: 'sonarQuantum'
+          destination-repository-name: 'sonarQuantumAnalysis'
           user-email: javierromero236@gmail.com
           target-branch: main
       - name: Check python project
