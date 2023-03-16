@@ -52,8 +52,8 @@ jobs:
          git config --global user.name "$NAME"
          git config --list   
          git clone https://github.com/javierrome236/sonarQuantum.git
-         python sonar.py
          rm ./sonarQuantum/*
+         python sonar.py
          
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
