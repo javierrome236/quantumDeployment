@@ -56,9 +56,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'sonarQuantum'
-          destination-github-username: 'javierrome236'
+          destination-github-username: ${{ secrets.USERNAME }}
           destination-repository-name: 'sonarQuantumAnalysis'
-          user-email: javierromero236@gmail.com
+          user-email: ${{ secrets.EMAIL }}
           target-branch: main
       - name: Check python project
         run: |
