@@ -5,7 +5,7 @@ import requests
 
 def generate():
     # Open the file and load the file
-    with open('openapi.yaml', encoding="utf-16") as f:
+    with open('openapi.yaml') as f:
         data = yaml.load(f, Loader=SafeLoader)
     urls={}
     names={}
@@ -24,9 +24,12 @@ def generate():
         else:
             if urls[i]=='aws':
                 x = requests.get('http://quantumservicesdeployment.spilab.es:8081/code/aws', headers={"x-url":i}).json()['code']
+                x.encoding = "utf-8"
             else:
                 x = requests.get('http://quantumservicesdeployment.spilab.es:8081/code/ibm', headers={"x-url":i}).json()['code']
+                x.encoding = "utf-8"
             for line in x:
+
                 f.write(line+'\n')
         f.close()
 
