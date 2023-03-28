@@ -14,17 +14,17 @@ tags:
   - name: quantum_code
     description: Everything about your quantum service code and circuits
 paths:
-  /circuit/randomAWS:
+  /circuit/Bernstein-Vazirani-IBM-circuit:
     get:
       tags:
         - quantum_code
-      summary: Get the circuit implementation of Grover Algorithm
+      summary: Get the circuit implementation of Bernstein-Vazirani Algorithm
       description: ''
-      operationId: grover_circuitAWS
+      operationId: Bernstein-Vazirani-IBM-circuit
       parameters:
         - name: machine
           in: query
-          description: Name of the machine where to execute
+          description: Algorithm that tries to learn a string encoded in a function
           required: true
           style: form
           explode: false
@@ -46,18 +46,18 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22,%22H%22,%22H%22,%22H%22,%22H%22],[%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22]]}'
-      x-quantumProvider: 'aws'
-  /circuit/ShorAWS:
+      x-quantumProvider: 'ibm'
+  /circuit/Bernstein-Vazirani-AWS-circuit:
     get:
       tags:
         - quantum_code
-      summary: Get the circuit implementation of Shor Algorithm
+      summary: Get the circuit implementation of Bernstein-Vazirani Algorithm
       description: ''
-      operationId: shor_circuitAWS
+      operationId: Bernstein-Vazirani-AWS-circuit
       parameters:
         - name: machine
           in: query
-          description: Name of the machine where to execute
+          description: Algorithm that tries to learn a string encoded in a function
           required: true
           style: form
           explode: false
@@ -78,20 +78,20 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/openapi-generator-quantum/main/shor.py'
+      x-quantumCode: 'https://algassert.com/quirk#circuit=%7B%22cols%22:%5B%5B%22H%22,%22H%22,%22H%22,%22H%22%5D,%5B%22X%22%5D,%5B%22X%22,%22X%22,%22X%22,%22X%22%5D,%5B1,%22%E2%80%A2%22,%22X%22%5D,%5B1,%22X%22,%22%E2%80%A2%22%5D,%5B1,%22%E2%80%A2%22,%22X%22%5D,%5B1,1,%22%E2%80%A2%22,%22X%22%5D,%5B1,1,%22X%22,%22%E2%80%A2%22%5D,%5B1,1,%22%E2%80%A2%22,%22X%22%5D,%5B%22%E2%80%A2%22,1,1,%22X%22%5D,%5B%22X%22,1,1,%22%E2%80%A2%22%5D,%5B%22%E2%80%A2%22,1,1,%22X%22%5D,%5B%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22%5D%5D%7D'
       x-quantumProvider: 'aws'
-  /circuit/randomIBM:
+  /circuit/Bernstein-Vazirani-IBM-code:
     get:
       tags:
         - quantum_code
-      summary: Get the circuit implementation of Grover Algorithm
+      summary: Get the circuit implementation of Bernstein-Vazirani Algorithm
       description: ''
-      operationId: grover_circuitIBM
+      operationId: Bernstein-Vazirani-IBM-code
       parameters:
         - name: machine
           in: query
-          description: Name of the machine where to execute
-          required: false
+          description: Algorithm that tries to learn a string encoded in a function
+          required: true
           style: form
           explode: false
           deprecated: true
@@ -111,8 +111,9 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22,%22H%22,%22H%22,%22H%22,%22H%22],[%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22]]}'
-      x-provider: 'ibm'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3f6f114350c81ed728955e68a84fb34d1154fa17/Bernstein-Vazirani.py'
+      x-quantumProvider: 'ibm'
+      
   /findByCategory:
     get:
       tags:
