@@ -57,7 +57,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Algorithm that tries to learn a string encoded in a function.
+          description: Algorithm that tries to learn a string encoded in a function
           required: true
           style: form
           explode: false
