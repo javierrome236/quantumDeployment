@@ -5,9 +5,8 @@ import requests
 
 def generate():
     # Open the file and load the file
-    with open('openapi.yaml') as f:
+    with open('openapi.yaml', encoding='utf8') as f:
         data = yaml.load(f, Loader=SafeLoader)
-        data=data.encode()
     urls={}
     names={}
     for i in data['paths']:
