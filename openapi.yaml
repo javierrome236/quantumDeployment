@@ -556,7 +556,143 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/phase_estimation.py'
-      x-quantumProvider: 'ibm' 
+      x-quantumProvider: 'ibm'
+      
+  /circuit/QFTIBMquirk:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the QFT 
+      description: ''
+      operationId: QFTIBMquirk
+      parameters:
+        - name: machine
+          in: query
+          description: The Quantum Fourier Transform (QFT) is the quantum implementation of the discrete Fourier transform over the amplitudes of a wavefunction
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H"],[1,"X","X"],["H"],["Z","•"],["Z^½",1,"•"],[1,"H"],[1,"Z","•"],[1,1,"H"]]}'
+      x-quantumProvider: 'ibm'
+      
+  /circuit/QFTIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the QFT 
+      description: ''
+      operationId: QFTIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: The Quantum Fourier Transform (QFT) is the quantum implementation of the discrete Fourier transform over the amplitudes of a wavefunction
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/QFT.py'
+      x-quantumProvider: 'ibm'
+      
+  /circuit/QAOAIBMquirk:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the QAOA 
+      description: ''
+      operationId: QAOAIBMquirk
+      parameters:
+        - name: machine
+          in: query
+          description: Quantum algorithm that are used to solve optimization problems
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["Rxft","Rxft"],[],["•","X"],["Rxft","Rxft"],[],[1,"Rxft"],[],["•","X"],["Rxft"],[],[1,"Measure"],["Measure"]]}'
+      x-quantumProvider: 'ibm'
+      
+  /circuit/QAOAIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the QAOA 
+      description: ''
+      operationId: QAOAIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: Quantum algorithm that are used to solve optimization problems
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/QAOA.py'
+      x-quantumProvider: 'ibm'
       
   /findByCategory:
     get:
