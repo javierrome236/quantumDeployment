@@ -45,7 +45,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://algassert.com/quirk#circuit=%7B%22cols%22:%5B%5B%22H%22,%22H%22,%22H%22%5D,%5B1,1,1,%22X%22%5D,%5B1,1,1,%22H%22%5D,%5B%22%E2%80%A2%22,1,1,%22X%22%5D,%5B1,%22%E2%80%A2%22,1,%22X%22%5D,%5B1,1,%22%E2%80%A2%22,%22X%22%5D,%5B%22H%22,%22H%22,%22H%22%5D,%5B%22Measure%22,%22Measure%22,%22Measure%22%5D%5D%7D'
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H","H"],["X"],["X","X","X","X"],[1,"•","X"],[1,"X","•"],[1,"•","X"],[1,1,"•","X"],[1,1,"X","•"],[1,1,"•","X"],["•",1,1,"X"],["X",1,1,"•"],["•",1,1,"X"],["Measure","Measure","Measure","Measure"]]}'
       x-quantumProvider: 'ibm'
   /circuit/Bernstein-Vazirani-AWS-circuit:
     get:
@@ -78,7 +78,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://algassert.com/quirk#circuit=%7B%22cols%22:%5B%5B%22H%22,%22H%22,%22H%22%5D,%5B1,1,1,%22X%22%5D,%5B1,1,1,%22H%22%5D,%5B%22%E2%80%A2%22,1,1,%22X%22%5D,%5B1,%22%E2%80%A2%22,1,%22X%22%5D,%5B1,1,%22%E2%80%A2%22,%22X%22%5D,%5B%22H%22,%22H%22,%22H%22%5D,%5B%22Measure%22,%22Measure%22,%22Measure%22%5D%5D%7D'
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H","H"],["X"],["X","X","X","X"],[1,"•","X"],[1,"X","•"],[1,"•","X"],[1,1,"•","X"],[1,1,"X","•"],[1,1,"•","X"],["•",1,1,"X"],["X",1,1,"•"],["•",1,1,"X"],["Measure","Measure","Measure","Measure"]]}'
       x-quantumProvider: 'aws'
   /circuit/Bernstein-Vazirani-IBM-code:
     get:
