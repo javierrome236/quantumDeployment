@@ -46,7 +46,7 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22,%22H%22,%22H%22,%22H%22,%22H%22],[%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22,%22Measure%22]]}'
-      x-provider: 'aws'
+      x-quantumProvider: 'aws'
   /circuit/ShorAWS:
     get:
       tags:
@@ -79,7 +79,7 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/openapi-generator-quantum/main/shor.py'
-      x-provider: 'aws'
+      x-quantumProvider: 'aws'
   /circuit/randomIBM:
     get:
       tags:
