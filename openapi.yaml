@@ -46,7 +46,7 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit=%7B%22cols%22:%5B%5B%22H%22,%22H%22,%22H%22%5D,%5B1,1,1,%22X%22%5D,%5B1,1,1,%22H%22%5D,%5B%22%E2%80%A2%22,1,1,%22X%22%5D,%5B1,%22%E2%80%A2%22,1,%22X%22%5D,%5B1,1,%22%E2%80%A2%22,%22X%22%5D,%5B%22H%22,%22H%22,%22H%22%5D,%5B%22Measure%22,%22Measure%22,%22Measure%22%5D%5D%7D'
-      x-provider: 'ibm'
+      x-quantumProvider: 'ibm'
   /circuit/Bernstein-Vazirani-AWS-circuit:
     get:
       tags:
@@ -79,7 +79,7 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit=%7B%22cols%22:%5B%5B%22H%22,%22H%22,%22H%22%5D,%5B1,1,1,%22X%22%5D,%5B1,1,1,%22H%22%5D,%5B%22%E2%80%A2%22,1,1,%22X%22%5D,%5B1,%22%E2%80%A2%22,1,%22X%22%5D,%5B1,1,%22%E2%80%A2%22,%22X%22%5D,%5B%22H%22,%22H%22,%22H%22%5D,%5B%22Measure%22,%22Measure%22,%22Measure%22%5D%5D%7D'
-      x-provider: 'aws'
+      x-quantumProvider: 'aws'
   /circuit/Bernstein-Vazirani-IBM-code:
     get:
       tags:
@@ -112,7 +112,7 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3f6f114350c81ed728955e68a84fb34d1154fa17/Bernstein-Vazirani.py'
-      x-provider: 'ibm'
+      x-quantumProvider: 'ibm'
       
   /findByCategory:
     get:

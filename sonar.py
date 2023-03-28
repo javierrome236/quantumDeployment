@@ -12,7 +12,7 @@ def generate():
     for i in data['paths']:
         for j in data['paths'][i]:
             if 'x-quantumCode' in data['paths'][i][j]:
-                urls[data['paths'][i][j]['x-quantumCode']]=data['paths'][i][j]['x-provider']
+                urls[data['paths'][i][j]['x-quantumCode']]=data['paths'][i][j]['x-qunatumProvider']
             if 'operationId' in data['paths'][i][j] and 'x-quantumCode' in data['paths'][i][j]:
                 names[data['paths'][i][j]['x-quantumCode']]=data['paths'][i][j]['operationId']
     x=None
