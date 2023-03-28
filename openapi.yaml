@@ -79,7 +79,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3f6f114350c81ed728955e68a84fb34d1154fa17/Bernstein-Vazirani.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/Bernstein-Vazirani.py'
       x-quantumProvider: 'ibm'
       
   /findByCategory:
