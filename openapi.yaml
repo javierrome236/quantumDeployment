@@ -58,7 +58,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Shor's algorithm is a quantum computer algorithm for finding the prime factors of an integer
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -92,7 +92,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Algorithm that tries to learn a string encoded in a function
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -126,7 +126,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Algorithm that tries to learn a string encoded in a function
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -160,7 +160,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Algorithm for searching an unordered sequence of data with N components in time O
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -194,7 +194,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Algorithm for searching an unordered sequence of data with N components in time O
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -228,7 +228,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Algorithm that determines if a function is balanced or constant
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -262,7 +262,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Algorithm that determines if a function is balanced or constant
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -296,7 +296,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: The goal of Simon's algorithm is to determine if f is one-to-one or two-to-one, which we will do by directly finding the secret string s
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -330,7 +330,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: The goal of Simon's algorithm is to determine if f is one-to-one or two-to-one, which we will do by directly finding the secret string s
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -364,7 +364,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: The goal of TSP in quantum computing is to find the shortest possible route that visits a set of cities exactly once and returns to the starting city
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -398,7 +398,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: The goal of TSP in quantum computing is to find the shortest possible route that visits a set of cities exactly once and returns to the starting city
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -432,8 +432,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Quantum teleportation instantly transfers the condition or state of one quantum particle to another distant one without sending the particle itself
-          required: true
+          description: quantum machine
           style: form
           explode: false
           deprecated: true
@@ -466,7 +465,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Quantum teleportation instantly transfers the condition or state of one quantum particle to another distant one without sending the particle itself
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -500,7 +499,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Quantum phase estimation is one of the most important subroutines in quantum computation. It serves as a central building block for many quantum algorithms
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -534,7 +533,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Quantum phase estimation is one of the most important subroutines in quantum computation. It serves as a central building block for many quantum algorithms
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -568,7 +567,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: The Quantum Fourier Transform (QFT) is the quantum implementation of the discrete Fourier transform over the amplitudes of a wavefunction
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -602,7 +601,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: The Quantum Fourier Transform (QFT) is the quantum implementation of the discrete Fourier transform over the amplitudes of a wavefunction
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -636,7 +635,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Quantum algorithm that are used to solve optimization problems
+          description: quantum machine
           required: true
           style: form
           explode: false
@@ -670,7 +669,7 @@ paths:
       parameters:
         - name: machine
           in: query
-          description: Quantum algorithm that are used to solve optimization problems
+          description: quantum machine
           required: true
           style: form
           explode: false
