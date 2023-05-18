@@ -120,7 +120,7 @@ paths:
     get:
       tags:
         - quantum_code
-      summary: Get the circuit implementation of Bernstein-Vazirani Algorithm
+      summary: Get the circuit Implementation of Bernstein-Vazirani Algorithm
       description: ''
       operationId: BernsteinVaziraniIBMqiskit
       parameters:
