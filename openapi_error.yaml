@@ -489,6 +489,40 @@ paths:
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/teleportation.py'
       x-quantumProvider: 'ibm'
       
+  /circuit/PhaseEstimationIBMquirk:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the Teleportation 
+      description: ''
+      operationId: PhaseEstimationIBMquirk
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H"],[1,1,1,"X"],["•",1,1,"Z^¼"],[1,"•",1,"Z^¼"],[1,"•",1,"Z^¼"],[1,1,"•","Z^¼"],[1,1,"•","Z^¼"],[1,1,"•","Z^¼"],[1,1,"•","Z^¼"],["Swap",1,"Swap"],["H"],["•","~16c9"],[1,"H"],["•",1,"~gf1o"],[1,"•","~16c9"],[1,1,"H"],["Measure","Measure","Measure"]],"gates":[{"id":"~gf1o","name":"U(-pi/4)","matrix":"{{1,0},{0,√½-√½i}}"},{"id":"~16c9","name":"U(-pi/2)","matrix":"{{1,0},{0,-i}}"}]}'
+      x-quantumProvider: 'ibm'
+      
   /circuit/PhaseEstimationIBMqiskit:
     get:
       tags:
@@ -521,6 +555,40 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/phase_estimation.py'
+      x-quantumProvider: 'ibm'
+      
+  /circuit/QFTIBMquirk:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the QFT 
+      description: ''
+      operationId: QFTIBMquirk
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H"],[1,"X","X"],["H"],["Z","•"],["Z^½",1,"•"],[1,"H"],[1,"Z","•"],[1,1,"H"]]}'
       x-quantumProvider: 'ibm'
       
   /circuit/QFTIBMqiskit:
@@ -556,7 +624,40 @@ paths:
           description: Invalid execution
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/QFT.py'
       x-quantumProvider: 'ibm'
-    
+      
+  /circuit/QAOAIBMquirk:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the QAOA 
+      description: ''
+      operationId: QAOAIBMquirk
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["Rxft","Rxft"],[],["•","X"],["Rxft","Rxft"],[],[1,"Rxft"],[],["•","X"],["Rxft"],[],[1,"Measure"],["Measure"]]}'
+      x-quantumProvider: 'ibm'
       
   /circuit/QAOAIBMqiskit:
     get:
