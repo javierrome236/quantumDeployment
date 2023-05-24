@@ -46,7 +46,7 @@ paths:
         '405':
           description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H","H","H"],["Measure","Measure","Measure","Measure","Measure"]]}'
-      x-provider: 'aws'
+      x-quantumProvider: 'aws'
   /circuit/ShorIBMqiskit:
     get:
       tags:
