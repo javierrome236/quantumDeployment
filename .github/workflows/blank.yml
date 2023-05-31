@@ -41,7 +41,14 @@ jobs:
           pip install itsdangerous==2.0.1 --force-reinstall
           pip install werkzeug==2.0.3 --force-reinstall        
       - name: Build with Maven
-        run: java -jar openapi-generator-cli.jar generate -i openapi.yaml -g python-quantum -o .
+        run: java -jar openapi-generator-cli.jar generate -i openapi.yaml -g python-quantum -o ./openapi_server
+      - name: Zip code
+        run: zip -r openapi_server.zip openapi_server
+      - name: Upload APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: Quantum Services
+          path: ./openapi_server.zip
       - name: Prepare Sonar files
         run: |
          git init
