@@ -86,7 +86,7 @@ paths:
         - quantum_code
       summary: Get the circuit implementation of Shor Algorithm
       description: ''
-      operationId: ShorIBMquirk
+      operationId: Shor_IBMquirk
       parameters:
         - name: machine
           in: query
