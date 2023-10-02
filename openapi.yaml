@@ -20,7 +20,7 @@ paths:
         - quantum_code
       summary: Get the circuit implementation of Grover Algorithm
       description: ''
-      operationId: grover_circuitAWS
+      operationId: grover_AWS
       parameters:
         - name: machine
           in: query
