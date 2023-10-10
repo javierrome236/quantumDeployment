@@ -692,6 +692,142 @@ paths:
           description: Invalid execution
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/QAOA.py'
       x-quantumProvider: 'ibm'
+
+  /circuit/KickbackIBMquirk:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the Kickback 
+      description: ''
+      operationId: KickbackIBMquirk
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[[1,"X"],["H","H"],["•","X"],["H","H"],["Measure"],[1,"Measure"]]}'
+      x-quantumProvider: 'ibm'
+
+  /circuit/KickbackIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the Kickback 
+      description: ''
+      operationId: KickbackIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/2f24769bda489236362475cfeb1070bdd451a055/Popular/Kickback.py'
+      x-quantumProvider: 'ibm'
+
+  /circuit/FullAdderIBMquirk:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the Full Adder 
+      description: ''
+      operationId: FullAdderIBMquirk
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H"],["•","•",1,"X"],["•","X"],[1,"•","•","X"],[1,"•","X"],["•","X"],["Measure"],[1,"Measure"],[1,1,"Measure"],[1,1,1,"Measure"]]}'
+      x-quantumProvider: 'ibm'
+
+  /circuit/FullAdderIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the Full Adder 
+      description: ''
+      operationId: FullAdderIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/2f24769bda489236362475cfeb1070bdd451a055/Popular/adder.py'
+      x-quantumProvider: 'ibm'
       
   /findByCategory:
     get:
