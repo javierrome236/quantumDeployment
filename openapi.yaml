@@ -997,7 +997,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/2f24769bda489236362475cfeb1070bdd451a055/Algebraic/Subset_sum_circuit.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/c02941cf06bdd8d4f975c53e6a4b624bb6c6a53d/Algebraic/Subset_sum_circuit.py'
       x-quantumProvider: 'ibm'
 
   /findByCategory:
