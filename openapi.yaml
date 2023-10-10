@@ -1177,7 +1177,7 @@ paths:
         - quantum_code
       summary: Get the circuit implementation of oracle less than 11
       description: ''
-      operationId: Less6IBMqiskit
+      operationId: Less11IBMqiskit
       parameters:
         - name: machine
           in: query
