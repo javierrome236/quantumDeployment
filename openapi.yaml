@@ -970,7 +970,7 @@ paths:
     get:
       tags:
         - quantum_code
-      summary: Get the circuit implementation of Subset sum problem
+      summary: Get the circuit implementation of Subset Sum problem
       description: ''
       operationId: SubsetIBMqiskit
       parameters:
@@ -997,7 +997,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/c02941cf06bdd8d4f975c53e6a4b624bb6c6a53d/Algebraic/Subset_sum_circuit.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Algebraic/Subset_sum_circuit.py'
       x-quantumProvider: 'ibm'
 
   /findByCategory:
