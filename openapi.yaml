@@ -897,6 +897,73 @@ paths:
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/2f24769bda489236362475cfeb1070bdd451a055/Algebraic/Gauss_sum_circuit.py'
       x-quantumProvider: 'ibm'
 
+  /circuit/PellIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of Pell Equation
+      description: ''
+      operationId: PellIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/2f24769bda489236362475cfeb1070bdd451a055/Algebraic/Pell_Equation_circuit.py'
+      x-quantumProvider: 'ibm'
+
+  /circuit/PrimalityIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of Primality Proving Algorithm
+      description: ''
+      operationId: PrimalityIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/2f24769bda489236362475cfeb1070bdd451a055/Algebraic/primality_proving_circuit.py'
+      x-quantumProvider: 'ibm'
 
   /findByCategory:
     get:
