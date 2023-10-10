@@ -1236,7 +1236,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/ordered_search_circuit.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/0f192a468b3716dd032051be16c8aacfe52308bd/Oracular/ordered_search_circuit.py'
       x-quantumProvider: 'ibm'
 
   /circuit/PolynomialIBMqiskit:
