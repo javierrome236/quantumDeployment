@@ -1204,6 +1204,142 @@ paths:
           description: Invalid execution
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/menor_que_11.py'
       x-quantumProvider: 'ibm'
+  
+  /circuit/OrderedIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of Ordered Search algorithm
+      description: ''
+      operationId: OrderedIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/ordered_search_circuit.py'
+      x-quantumProvider: 'ibm'
+
+  /circuit/PolynomialIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of Polynomial interpolation algorithm
+      description: ''
+      operationId: PolynomialIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/Polynomial_interpolation_circuit.py'
+      x-quantumProvider: 'ibm'
+
+  /circuit/SearchingIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the Grover Algorithm Generalization Oracle
+      description: ''
+      operationId: SearchingIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/searching_circuit.py'
+      x-quantumProvider: 'ibm'
+
+  /circuit/SubsetSearchIBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of the subset search problem 
+      description: ''
+      operationId: SubsetSearchIBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/subset_finding_circuit.py'
+      x-quantumProvider: 'ibm'
 
 
 
