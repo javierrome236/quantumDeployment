@@ -1137,6 +1137,76 @@ paths:
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/intervalo_rango2.py'
       x-quantumProvider: 'ibm'
 
+  /circuit/Less6IBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of oracle less than 6
+      description: ''
+      operationId: Less6IBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/menor_que_6.py'
+      x-quantumProvider: 'ibm'
+
+  /circuit/Less11IBMqiskit:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of oracle less than 11
+      description: ''
+      operationId: Less6IBMqiskit
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/menor_que_11.py'
+      x-quantumProvider: 'ibm'
+
+
+
   /findByCategory:
     get:
       tags:
