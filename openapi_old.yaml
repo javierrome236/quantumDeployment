@@ -47,39 +47,7 @@ paths:
           description: Invalid execution
       x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H","H","H"],["Measure","Measure","Measure","Measure","Measure"]]}'
       x-quantumProvider: 'aws'
-  /circuit/ShorAWS:
-    get:
-      tags:
-        - quantum_code
-      summary: Get the circuit implementation of Shor Algorithm
-      description: ''
-      operationId: Shor_IBMqiskit
-      parameters:
-        - name: machine
-          in: query
-          description: quantum machine
-          required: true
-          style: form
-          explode: false
-          deprecated: true
-          schema:
-            type: string
-        - name: shots
-          in: query
-          description: Number of shots
-          required: true
-          style: form
-          explode: false
-          deprecated: true
-          schema:
-            type: number
-      responses:
-        '200':
-          description: successful operation
-        '405':
-          description: Invalid execution
-      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H","H"],["X"],["X","X","X","X"],[1,"•","X"],[1,"X","•"],[1,"•","X"],[1,1,"•","X"],[1,1,"X","•"],[1,1,"•","X"],["•",1,1,"X"],["X",1,1,"•"],["•",1,1,"X"],["Measure","Measure","Measure","Measure"]]}'
-      x-quantumProvider: 'aws'
+  
 externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
