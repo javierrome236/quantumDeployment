@@ -78,7 +78,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3beac7c00f41e743859570856298b928eeda54d3/Shor_algorithm.py'
+      x-quantumCode: 'https://algassert.com/quirk#circuit={"cols":[["H","H","H","H"],["X"],["X","X","X","X"],[1,"•","X"],[1,"X","•"],[1,"•","X"],[1,1,"•","X"],[1,1,"X","•"],[1,1,"•","X"],["•",1,1,"X"],["X",1,1,"•"],["•",1,1,"X"],["Measure","Measure","Measure","Measure"]]}'
       x-quantumProvider: 'aws'
 externalDocs:
   description: Find out more about Swagger
