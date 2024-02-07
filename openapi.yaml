@@ -1272,6 +1272,88 @@ paths:
           description: Invalid execution
       x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/71b3698e39f9b27a4c31614252c134c62d04ff41/Oracular/Polynomial_interpolation_circuit.py'
       x-quantumProvider: 'ibm'
+      
+  /circuit/CircuitIBMqiskitParameterized:
+    post:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of circuit with parameters
+      description: ''
+      operationId: CircuitIBMqiskitParameterized
+      requestBody:
+        description: algorithm parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Parameters'
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/b906c07e6dcca89c88d1fb2267fa150b31c0bb61/Parameterized/ParameterizedQiskit.py'
+      x-quantumProvider: 'ibm'
+
+  /circuit/CircuitAWSParameterized:
+    post:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of circuit with parameters
+      description: ''
+      operationId: CircuitAWSParameterized
+      requestBody:
+        description: algorithm parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Parameters'
+      parameters:
+        - name: machine
+          in: query
+          description: quantum machine
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/af8c1f0e7fd51c048baa688ef0357d40e27b3002/Parameterized/ParameterizedAWS.py'
+      x-quantumProvider: 'aws'
 
   /circuit/SearchingIBMqiskit:
     get:
@@ -1399,6 +1481,16 @@ components:
           pattern: ^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$
       xml:
         name: Category
+    Parameters:
+      properties:
+        gamma:
+          type: number
+          format: float
+          example: 0.1
+        beta:
+          type: number
+          format: float
+          example: 0.6
     quantum:
       title: quantum code
       description: quantum code 
