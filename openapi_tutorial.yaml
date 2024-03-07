@@ -14,6 +14,83 @@ tags:
   - name: quantum_code
     description: Everything about your quantum service code and circuits
 paths:
+
+  /circuit/maxcut3qubitsQASM:
+    post:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of max cut 3 qubits in QASM 
+      description: ''
+      operationId: maxcut3qubitsQASM
+      parameters:
+        - name: machine
+          in: query
+          description: maxcut3qubitsQASM
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCodeQASM: '"OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg meas[3];\nh q[0];\nh q[1];\nrzz(1.0) q[0],q[1];\nh q[2];\nrzz(1.0) q[0],q[2];\nrx(2.0) q[0];\nrzz(1.0) q[1],q[2];\nrx(2.0) q[1];\nrx(2.0) q[2];\nbarrier q[0],q[1],q[2];\nmeasure q[0] -> meas[0];\nmeasure q[1] -> meas[1];\nmeasure q[2] -> meas[2];\n"'
+      x-quantumCode: null
+      x-quantumProvider: 'ibm'
+      
+  /circuit/parameterizedQASM:
+    post:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation of a parameterized circuit in QASM 
+      description: ''
+      operationId: parameterizedQASM
+      requestBody:
+        description: algorithm parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ParametersQASM'
+      parameters:
+        - name: machine
+          in: query
+          description: parameterizedQASM
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: string
+        - name: shots
+          in: query
+          description: Number of shots
+          required: true
+          style: form
+          explode: false
+          deprecated: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-quantumCodeQASM: '"OPENQASM 3;\ninclude \"stdgates.inc\";\ninput float[64] beta0;\ninput float[64] gamma0;\ngate rzz_1466526231824(gamma0) _gate_q_0, _gate_q_1 {\n  cx _gate_q_0, _gate_q_1;\n  rz(gamma0) _gate_q_1;\n  cx _gate_q_0, _gate_q_1;\n}\ngate rzz_1466525103632(gamma0) _gate_q_0, _gate_q_1 {\n  cx _gate_q_0, _gate_q_1;\n  rz(gamma0) _gate_q_1;\n  cx _gate_q_0, _gate_q_1;\n}\ngate rzz_1466532946384(gamma0) _gate_q_0, _gate_q_1 {\n  cx _gate_q_0, _gate_q_1;\n  rz(gamma0) _gate_q_1;\n  cx _gate_q_0, _gate_q_1;\n}\ngate rzz_1466526338000(gamma0) _gate_q_0, _gate_q_1 {\n  cx _gate_q_0, _gate_q_1;\n  rz(gamma0) _gate_q_1;\n  cx _gate_q_0, _gate_q_1;\n}\ngate rzz_1466526335120(gamma0) _gate_q_0, _gate_q_1 {\n  cx _gate_q_0, _gate_q_1;\n  rz(gamma0) _gate_q_1;\n  cx _gate_q_0, _gate_q_1;\n}\nbit[4] meas;\nqubit[4] q;\nh q[0];\nh q[1];\nrzz_1466526231824(gamma0) q[0], q[1];\nh q[2];\nrzz_1466525103632(gamma0) q[0], q[2];\nrx(2.0*beta0) q[0];\nrzz_1466532946384(gamma0) q[1], q[2];\nh q[3];\nrzz_1466526338000(gamma0) q[1], q[3];\nrx(2.0*beta0) q[1];\nrzz_1466526335120(gamma0) q[2], q[3];\nrx(2.0*beta0) q[2];\nrx(2.0*beta0) q[3];\nbarrier q[0], q[1], q[2], q[3];\nmeas[0] = measure q[0];\nmeas[1] = measure q[1];\nmeas[2] = measure q[2];\nmeas[3] = measure q[3];\n"'
+      x-quantumCode: null
+      x-quantumProvider: 'ibm'
+
   /circuit/ShorAWSquirk:
     get:
       tags:
@@ -79,7 +156,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/3bef8fa2f5c5df6b49d50b7ace7d4bee9d380498/Popular/Shor_algorithm.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/ceae6c374df01a918844b8d607bd8b6446888c8d/Popular/Shor_algorithm.py'
       x-quantumProvider: 'ibm'
       
   /circuit/CircuitIBMqiskitParameterized:
@@ -120,7 +197,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/b906c07e6dcca89c88d1fb2267fa150b31c0bb61/Parameterized/ParameterizedQiskit.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/4afa4163c8aaa2ea7a3713ee19a0a02cca1517fa/Parameterized/ParameterizedQiskit.py'
       x-quantumProvider: 'ibm'
 
   /circuit/CircuitAWSParameterized:
@@ -229,7 +306,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/d6e6e7dfa00e850b65adc3c52db50d389232d07d/Popular/Bernstein-Vazirani.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/1ab019ea64f58ad36063025bd0c75ac71a8d552a/Popular/Bernstein-Vazirani.py'
       x-quantumProvider: 'ibm'
   
   /circuit/GroverIBMquirk:
@@ -297,7 +374,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/beb9275ea071fda4120bd3b8f948d13ea2ddba64/Popular/Grover_algorithm.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/2a424a660e913b70eada1663cb167c4cb3d154f0/Popular/Grover_algorithm.py'
       x-quantumProvider: 'ibm'
       
   /circuit/DeutschJozsaAWSquirk:
@@ -365,7 +442,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/d7ccb56e2cc895fe1a6482d3f7f0fe971aa66b1c/Popular/Deutsch%E2%80%93Jozsa_algorithm.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/0a90a21154f2496eb6329dcd3b211baaf0ebd40a/Popular/Deutsch%E2%80%93Jozsa_algorithm.py'
       x-quantumProvider: 'ibm'
   
   /circuit/SimonIBMquirk:
@@ -433,7 +510,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/134aa63967ed2b783005ff933c879eebe2c3bad3/Popular/Simon_algorithm.py'
+      x-quantumCode: 'https://bitbucket.org/spilab/quantum-circuits-code/raw/1ba980ee63c38fd77ec670412c4aab5215e78a8f/Popular/Simon_algorithm.py'
       x-quantumProvider: 'ibm'
       
   /findByCategory:
@@ -492,6 +569,17 @@ components:
           pattern: ^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$
       xml:
         name: Category
+
+    ParametersQASM:
+      properties:
+        gamma0:
+          type: number
+          format: float
+          example: 0.1
+        beta0:
+          type: number
+          format: float
+          example: 0.6    
         
     Parameters:
       properties:
