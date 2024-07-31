@@ -12,7 +12,7 @@ Flask==2.0.1
 boto3==1.24.20
 botocore==1.27.20
 amazon-braket-default-simulator==1.6.2
-amazon-braket-ocean-plugin==1.0.10
+amazon-braket-ocean-plugin>=1.0.10
 amazon-braket-schemas==1.10.0
 amazon-braket-sdk==1.25.2
 qiskit==0.36.2
