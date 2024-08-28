@@ -5,7 +5,7 @@ import requests
 
 def generate():
     # Open the file and load the file
-    with open('openapi_tutorial.yaml') as f:
+    with open('openapi_sonar.yaml') as f:
         data = yaml.load(f, Loader=SafeLoader)
     urls={}
     names={}
