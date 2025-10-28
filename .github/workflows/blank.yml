@@ -45,7 +45,7 @@ jobs:
       - name: Zip code
         run: zip -r openapi_server.zip openapi_server
       - name: Upload APK
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: Quantum Services
           path: ./openapi_server.zip
